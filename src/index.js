@@ -23,35 +23,9 @@ function refreshWeather(response) {
 
 function setBackgroundFromIcon(iconUrl) {
   const weatherApp = document.querySelector(".weather-app");
+  const fileName = iconUrl.split("/").pop().split("?")[0];
 
-  weatherApp.className = "weather-app";
-  // keeps base class and removes previous weather classes
-
-  const fileName = iconUrl.split("/").pop();
-  const iconName = fileName.replace(".png", "");
-
-  const isDay = iconName.includes("day");
-  const timeOfDay = isDay ? "day" : "night";
-
-  let weatherType = "";
-
-  if (iconName.includes("clear")) {
-    weatherType = "clear";
-  } else if (iconName.includes("cloud")) {
-    weatherType = "cloudy";
-  } else if (iconName.includes("rain")) {
-    weatherType = "rainy";
-  } else if (iconName.includes("snow")) {
-    weatherType = "snowy";
-  } else if (iconName.includes("mist")) {
-    weatherType = "misty";
-  } else if (iconName.includes("storm") || iconName.includes("thunder")) {
-    weatherType = "stormy";
-  }
-
-  if (weatherType !== "") {
-    weatherApp.classList.add(`${weatherType}-${timeOfDay}`);
-  }
+  weatherApp.style.backgroundImage = `url("media/${fileName}")`;
 }
 
 function formatDate(date) {
