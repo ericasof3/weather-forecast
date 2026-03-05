@@ -23,9 +23,12 @@ function refreshWeather(response) {
 
 function setBackgroundFromIcon(iconUrl) {
   const weatherApp = document.querySelector(".weather-app");
-  const fileName = iconUrl.split("/").pop().split("?")[0];
+  const fileName = iconUrl.split("/").pop().split("?")[0]; // e.g. clear-sky-night.png
 
   weatherApp.style.backgroundImage = `url("media/${fileName}")`;
+
+  const isNight = fileName.includes("night");
+  weatherApp.classList.toggle("is-night", isNight);
 }
 
 function formatDate(date) {
