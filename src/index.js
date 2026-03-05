@@ -17,7 +17,41 @@ function refreshWeather(response) {
   temperatureElement.innerHTML = Math.round(temperature);
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon"/>`;
 
+  setBackgroundFromIcon(response.data.condition.icon_url);
   getForecast(response.data.city);
+}
+
+function setBackgroundFromIcon(iconUrl) {
+  const weatherApp = document.querySelector(".weather-app");
+
+  weatherApp.className = "weather-app";
+  // keeps base class and removes previous weather classes
+
+  const fileName = iconUrl.split("/").pop();
+  const iconName = fileName.replace(".png", "");
+
+  const isDay = iconName.includes("day");
+  const timeOfDay = isDay ? "day" : "night";
+
+  let weatherType = "";
+
+  if (iconName.includes("clear")) {
+    weatherType = "clear";
+  } else if (iconName.includes("cloud")) {
+    weatherType = "cloudy";
+  } else if (iconName.includes("rain")) {
+    weatherType = "rainy";
+  } else if (iconName.includes("snow")) {
+    weatherType = "snowy";
+  } else if (iconName.includes("mist")) {
+    weatherType = "misty";
+  } else if (iconName.includes("storm") || iconName.includes("thunder")) {
+    weatherType = "stormy";
+  }
+
+  if (weatherType !== "") {
+    weatherApp.classList.add(`${weatherType}-${timeOfDay}`);
+  }
 }
 
 function formatDate(date) {

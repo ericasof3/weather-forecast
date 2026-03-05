@@ -18,12 +18,96 @@ a {
   background: rgba(255, 255, 255, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
-  max-width: 600px;
+  max-width: 920px;
   margin: 45px auto;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   border-radius: 16px;
   padding: 30px;
   color: white;
+}
+
+.weather-app.clear-day {
+  background: url("../media/clear-day.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.weather-app.clear-night {
+  background: url("../media/clear-night.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.weather-app.cloudy-day {
+  background: url("../media/cloudy-day.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.weather-app.cloudy-night {
+  background: url("../media/cloudy-night.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.weather-app.misty-day {
+  background: url("../media/rainy-day.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.weather-app.misty-night {
+  background: url("../media/rainy-night.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.weather-app.rainy-day {
+  background: url("../media/rainy-day.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.weather-app.rainy-night {
+  background: url("../media/rainy-night.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.weather-app.snowy-day {
+  background: url("../media/snowy-day.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.weather-app.snowy-night {
+  background: url("../media/snowy-night.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.weather-app.stormy-day {
+  background: url("../media/stormy-day.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.weather-app.stormy-night {
+  background: url("../media/stormy-night.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 header {
@@ -35,7 +119,7 @@ header {
   background-color: rgba(255, 255, 255, 0.3);
   border: none;
   border-radius: 6px;
-  width: 80%;
+  width: 40%;
   font-size: 16px;
   padding: 15px 20px;
 }
